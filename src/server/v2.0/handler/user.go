@@ -437,10 +437,11 @@ func matchUserID(sctx security.Context, id int) bool {
 }
 
 func requireValidSecret(in string) error {
-	hasLower := regexp.MustCompile(`[a-z]`)
+	//hasLower := regexp.MustCompile(`[a-z]`)
 	hasUpper := regexp.MustCompile(`[A-Z]`)
 	hasNumber := regexp.MustCompile(`[0-9]`)
-	if len(in) >= 8 && hasLower.MatchString(in) && hasUpper.MatchString(in) && hasNumber.MatchString(in) {
+	//if len(in) >= 8 && hasLower.MatchString(in) && hasUpper.MatchString(in) && hasNumber.MatchString(in) {
+	if len(in) >= 8 && hasUpper.MatchString(in) && hasNumber.MatchString(in) {
 		return nil
 	}
 	return errors.BadRequestError(nil).WithMessage("the password or secret must be longer than 8 chars with at least 1 uppercase letter, 1 lowercase letter and 1 number")
