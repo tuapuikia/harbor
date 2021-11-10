@@ -108,7 +108,7 @@
                 <label for="input-secret" class="clr-control-label">{{"SYSTEM_ROBOT.CONFIRM_SECRET" | translate}}</label>
                 <div class="clr-control-container" [class.clr-error]="(inputSecret.dirty || inputSecret.touched) && inputSecret.invalid">
                     <div class="clr-input-wrapper">
-                        <input [type]="showInputSecret?'text':'password'" id="new-token" #inputSecret="ngModel" class="clr-input pwd-input" type="password" maxlength="30" size="30" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,128}$"
+                        <input [type]="showInputSecret?'text':'password'" id="new-token" #inputSecret="ngModel" class="clr-input pwd-input" type="password" maxlength="30" size="30" required pattern="^(?=.*\d)(?=.*[A-Z])(?!.*\s).{8,128}$"
                                 name="input_secret" [(ngModel)]="resetForms.input_secret" id="input-secret">
                         <clr-icon *ngIf="!showInputSecret" shape="eye" class="pw-eye" (click)="showInputSecret =!showInputSecret"></clr-icon>
                         <clr-icon *ngIf="showInputSecret" shape="eye-hide" class="pw-eye" (click)="showInputSecret =!showInputSecret"></clr-icon>
